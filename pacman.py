@@ -2,6 +2,9 @@ from random import choice
 from turtle import *
 from freegames import floor, vector
 
+# Juan Angel Mora Moreno | A00517141
+# Nombre y matri
+
 state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
