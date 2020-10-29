@@ -135,7 +135,8 @@ def move():
         if abs(pacman - point) < 20:
             return
 
-    ontimer(move, 100)
+    # Se modificó el valor y afecta tanto a pacman como a los fantasmas
+    ontimer(move, 45)
 
 def change(x, y):
     "Change pacman aim if valid."
