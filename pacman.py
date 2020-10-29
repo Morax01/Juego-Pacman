@@ -39,6 +39,7 @@ tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]
 
+"Funcion que rellena de azul"
 def square(x, y):
     "Draw square using path at (x, y)."
     path.up()
@@ -73,6 +74,7 @@ def valid(point):
 
     return point.x % 20 == 0 or point.y % 20 == 0
 
+"Funcion que dibuja el tablero en base a la matriz"
 def world():
     "Draw world using path."
     bgcolor('black')
@@ -91,6 +93,7 @@ def world():
                 path.goto(x + 10, y + 10)
                 path.dot(2, 'white')
 
+"Funcion que ejecuta movimientos"
 def move():
     "Move pacman and all ghosts."
     writer.undo()
@@ -102,7 +105,8 @@ def move():
         pacman.move(aim)
 
     index = offset(pacman)
-
+    
+    "Vuelve a pintar el tablero de azul y se come los puntos"
     if tiles[index] == 1:
         tiles[index] = 2
         state['score'] += 1
@@ -111,9 +115,11 @@ def move():
         square(x, y)
 
     up()
+    "Posicion del pacman y figura"
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
-
+    
+    "Imprimir la posicion y dibujar los fantasmas"
     for point, course in ghosts:
         if valid(point + course):
             point.move(course)
@@ -159,7 +165,8 @@ def move():
         dot(20, 'red')
 
     update()
-
+    
+    "Colision con pacman"
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
