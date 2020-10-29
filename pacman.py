@@ -3,7 +3,7 @@ from turtle import *
 from freegames import floor, vector
 
 # Juan Angel Mora Moreno | A00517141
-# Nombre y matri
+# Isaac Arredondo Padrón | A00828359
 
 state = {'score': 0}
 path = Turtle(visible=False)
